@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  pre_build:
+    commands:
+      - echo "Stage 1: Linting"
+      - npm run lint
+  build:
+    commands:
+      - echo "Stage 2: Automated Testing"
+      - npm test
+      - echo "Stage 3: Preparing Artifacts"
+artifacts:
+  files:
+    - index.html
